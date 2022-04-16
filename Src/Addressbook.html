@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AddressBook</title>
     <link rel="stylesheet" href="/style/AddressBook.css">
+    <script src="/Js/AddessBook.js"></script>
+    <script src="/Js/AddressBookform.js"></script>
 </head>
 <body>
      <!-- UC1 -->
@@ -30,15 +32,17 @@
         <!-- UC3 -->
         <form class="form1" id="addressBook" action="#" >
             <div class="row-content">
-               
+                <label class="label text" for="name"></label>
                 <input class="input" type="text" id="fullName" name="name" placeholder="FullName" required>
+                <error-output class="name-error" for="text"></error-output>
             </div>
             <div class="row-content">
-               
-                <input class="input1" type="text" id="address" name="address" placeholder="Address" required>
+                <label class="label text" for="address"></label>
+                <input class="input1" type="text" id="address1" name="address" placeholder="Address" required>
+                <error-output class="address-error" for="address"></error-output>
             </div>
             <div class="contener2">
-            
+               
                 <label class="label text" for="city"></label>
                 <div>
                     <select class="form-select" id="city" name="city" >
@@ -79,9 +83,10 @@
             </div>
             </div>
             <div class="row-content">
-                
-                <input class="input2" type="text" id="phno" name="phno" placeholder="Phone number" required>
-                <input type="hidden" id="addrId" value="">
+                <label class="label text" for="phno"></label>
+                <input class="input2" type="text" id="phno1" name="phno" placeholder="Phone number" required>
+               
+                <error-output class="phone-error" for="text"></error-output>
             </div>
   <!-- UC5 -->
   <div class="submit-reset">
