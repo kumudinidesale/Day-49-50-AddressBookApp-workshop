@@ -19,14 +19,79 @@
         </div>
     </header>
     <div class="form-contener">
-        <form action="#" class="form">
+        <div class="form">
             <div class="form-head">
                 <div class="head">Person Address Form</div>
                 <div class="form-logo">
                   <a href="/Src/Addressbook.html"><img src="/Asset/close.png" style="height: 25px;"></a>
                 </div>
               </div>
-        </form>
+     
+        <!-- UC3 -->
+        <form class="form1" id="addressBook" action="#" >
+            <div class="row-content">
+               
+                <input class="input" type="text" id="fullName" name="name" placeholder="FullName" required>
+            </div>
+            <div class="row-content">
+               
+                <input class="input1" type="text" id="address" name="address" placeholder="Address" required>
+            </div>
+            <div class="contener2">
+            
+                <label class="label text" for="city"></label>
+                <div>
+                    <select class="form-select" id="city" name="city" >
+                        <option value="">Select City</option>
+                        <option value="Banglore">Banglore</option>
+                        <option value="Calicut">Calicut</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </div>
+                <label class="state-label text" for="state"></label>
+                <div>
+                    <select class="form-select" id="state" name="state" >
+                        <option value="">Select State</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="TamilNadu">TamilNadu</option>
+                        <option value="AndhraPradesh">AndhraPradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                    </select>
+               
+            </div>
+          
+                <label class="label text" for="zip"></label>
+                <div>
+                    <select class="form-select" id="zip" name="zip" >
+                        <option value="">Select Zip</option>
+                        <option value="673594">673594</option>
+                        <option value="689090">689090</option>
+                        <option value="290832">290832</option>
+                        <option value="101029">101029</option>
+                        <option value="284763">284763</option>
+                        <option value="374890">374890</option>
+                    </select>
+               
+            </div>
+            </div>
+            <div class="row-content">
+                
+                <input class="input2" type="text" id="phno" name="phno" placeholder="Phone number" required>
+                <input type="hidden" id="addrId" value="">
+            </div>
+  <!-- UC5 -->
+  <div class="submit-reset">
+    <button type="button" id="submitButton" class="btn-Add"  >Add</button>
+    <button type="reset"  class="btn-Reset" >Reset</button>
+</div>
+</form>
+</div>
+</div>
+    </div>
     </div>
 </body>
 </html>
