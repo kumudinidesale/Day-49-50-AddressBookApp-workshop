@@ -50,18 +50,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
    
 
-    // const emailElement = document.querySelector('#email');
-    // const emailError = document.querySelector('.email-error');
-    // emailElement.addEventListener('input', function () {
-    //     let email = document.querySelector('#email').value;
-    //     try {
-    //         (new Contact()).email = email;
-    //         emailError.textContent = "";
-    //     } catch (e) {
-    //         emailError.textContent = e;
-    //     }
-
-    // });
+    
 })
 
 const save = (event)=>{
@@ -76,7 +65,7 @@ const save = (event)=>{
 }
 
 const setContactObject = () => {
-    let contactObject = new Contact()
+    // let contactObject = new Contact()
     let names = getInputValueById('#name').split(" ");
     contactObject._firstName = names[0];
     contactObject._lastName = names[1];
@@ -85,8 +74,8 @@ const setContactObject = () => {
     contactObject._state = getInputValueById('#state');
     contactObject._zip = getInputValueById('#zip');
     contactObject._phone = getInputValueById('#phone');
-    contactObject._email = getInputValueById('#email');
-    alert(contactObject.toString())
+    
+    alert(JSON.stringify(contactObject))
   }
 
   const getInputValueById = (id) => {
