@@ -1,17 +1,19 @@
 class Contact{
-    get id()
-    {
+    get id(){
         return this._id;
     }
-   
-    get firstName()
-    {
+
+    set id(id){
+        this._id=id;
+    }
+
+    get firstName(){
         return this._firstName;
     }
 
     set firstName(firstName)
     {
-        let firstNameRegex = RegExp('^[A-Z][a-z]{2,}$')
+        let firstNameRegex = RegExp('^[A-Za-z,/.0-9]{3,}$')
         if(firstNameRegex.test(firstName))
         this._firstName = firstName;
         else
@@ -25,14 +27,14 @@ class Contact{
 
     set lastName(lastName)
     {
-        let lastNameRegex = RegExp('^[A-Z][a-z]{2,}$')
+        let lastNameRegex = RegExp('^[A-Za-z,/.0-9]{3,}$')
         if(lastNameRegex.test(lastName))
         this._lastName = lastName;
         else
         throw 'Last Name Invalid'
     }
-    get address()
-    {
+
+    get address(){
         return this._address;
     }
 
@@ -50,33 +52,33 @@ class Contact{
         else{
             throw 'Address Invalid';
         }
+        // this._address=address;
     }
-    get city()
-    {
+
+    get city(){
         return this._city;
     }
 
-    set city(city)
-    {
-        let cityRegex = RegExp('^[A-Za-z\\s]{4,}$')
-        if(cityRegex.test(city))
-        this._city = city;
-        else
-        throw 'City Invalid'
+    set city(city){
+        let cityRegex = RegExp('^[A-Za-z\\s]{4,}$');
+        if(cityRegex.test(city)){
+            this._city=city;
+        }else{
+            throw "City is invalid"
+        }
     }
 
-    get state()
-    {
+    get state(){
         return this._state;
     }
 
-    set state(state)
-    {
-        let stateRegex = RegExp('^[A-Za-z\\s]{4,}$')
-        if(stateRegex.test(state))
-        this._state = state;
-        else
-        throw 'State Invalid'
+    set state(state){
+        let stateRegex = RegExp("^[A-Za-z\\s]{4,}$")
+        if(stateRegex.test(state)){
+            this._state = state;
+        }else{
+            throw "state is in valid";
+        }
     }
 
     get zip()
@@ -92,6 +94,7 @@ class Contact{
         else
         throw 'Zip Invalid'
     }
+
     get phone()
     {
         return this._phone;
@@ -107,6 +110,7 @@ class Contact{
         else
         throw 'Phone Number Invalid'
     }
+
     toString()
     {
         return "Id = "+this.id+", FirstName = "+this.firstName+", LastName = "+this.lastName+", Address = "+this.address+

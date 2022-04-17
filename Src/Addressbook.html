@@ -33,12 +33,12 @@
         <form class="form1" id="addressBook" action="#" >
             <div class="row-content">
                 <label class="label text" for="name"></label>
-                <input class="input" type="text" id="fullName" name="name" placeholder="FullName" required>
+                <input class="input" type="text" id="name" name="name" placeholder="FullName" required>
                 <error-output class="name-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="address"></label>
-                <input class="input1" type="text" id="address1" name="address" placeholder="Address" required>
+                <input class="input1" type="text" id="address" name="Address" placeholder="Address" required>
                 <error-output class="address-error" for="address"></error-output>
             </div>
             <div class="contener2">
@@ -83,15 +83,16 @@
             </div>
             </div>
             <div class="row-content">
-                <label class="label text" for="phno"></label>
-                <input class="input2" type="text" id="phno1" name="phno" placeholder="Phone number" required>
+                <label class="label text" for="phone"></label>
+                <input class="input2" type="text" id="phone" name="Phno" placeholder="Phone number" required>
                
                 <error-output class="phone-error" for="text"></error-output>
             </div>
   <!-- UC5 -->
   <div class="submit-reset">
-    <button type="button" id="submitButton" class="btn-Add"  >Add</button>
-    <button type="reset"  class="btn-Reset" >Reset</button>
+    <button type="submit" class="button addButton" id="addButton" >Add</button>
+    <button type="reset" onclick="resetForm()" class="resetButton button">Reset</button>
+   
 </div>
 </form>
 </div>

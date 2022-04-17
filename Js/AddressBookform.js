@@ -1,48 +1,95 @@
-let isUpdate = false;
-let contactObject = {};
-
+let contactObject = {}
 window.addEventListener('DOMContentLoaded', (event) => {
-
-    const name = document.querySelector('#fullName');
-    const textError = document.querySelector('.name-error');
+    const name = document.querySelector('#name');
+    const nameError = document.querySelector('.name-error');
     name.addEventListener('input', function () {
-        let names = document.querySelector('#fullName').value.split(" ");
+        let names = document.querySelector('#name').value.split(" ");
         if (name.value.length == 0) {
-            textError.textContent = "";
+            nameError.textContent = "";
             return;
         }
         try {
-            (new Contact()).name = names[0];
+            (new Contact()).firstName = names[0];
             (new Contact()).lastName = names[1];
-            textError.textContent = "";
+            nameError.textContent = '';
         } catch (e) {
-            textError.textContent = e;
+            nameError.textContent = e;
         }
     });
 
-    const addressElement = document.querySelector('#address1');
-    const addressError = document.querySelector('.address-error');
-    addressElement.addEventListener('input', function () {
-        let address = document.querySelector('#address1').value;
-        try {
-            (new Contact()).address = address;
-            addressError.textContent = ""
-        } catch (e) {
-            addressError.textContent = e;
-        }
-    });
+    // const addressElement = document.querySelector('#address');
+    // const addressError = document.querySelector('#address-error');
+    // addressElement.addEventListener('input', function () {
+    //     let address = document.querySelector('#address').value;
+    //     if (addressElement.value.length == 0) {
+    //         addressError.textContent = '';
+    //         return;
+    //     }
+    //     try {
+    //         (new Contact()).address = address;
+    //         addressError.textContent = '';
+    //         return;
+    //     } catch (e) {
+    //         addressError.textContent = e;
+    //     }
+    // });
 
-    const phoneElement = document.querySelector('#phno1');
+
+    const phoneElement = document.querySelector('#phone');
     const phoneError = document.querySelector('.phone-error');
     phoneElement.addEventListener('input', function () {
-        let phone = document.querySelector('#phno1').value;
+        let phone = document.querySelector('#phone').value;
+
         try {
             (new Contact()).phone = phone;
-            phoneError.textContent = "";
+            phoneError.textContent = '';
         } catch (e) {
             phoneError.textContent = e;
         }
-
     });
-    checkForUpdate();
-});
+
+   
+
+    // const emailElement = document.querySelector('#email');
+    // const emailError = document.querySelector('.email-error');
+    // emailElement.addEventListener('input', function () {
+    //     let email = document.querySelector('#email').value;
+    //     try {
+    //         (new Contact()).email = email;
+    //         emailError.textContent = "";
+    //     } catch (e) {
+    //         emailError.textContent = e;
+    //     }
+
+    // });
+})
+
+const save = (event)=>{
+//     event.preventDefault();
+//   event.stopPropagation();
+  try{
+    setContactObject();
+  }catch(e){
+    console.log(e);
+    return;
+  }
+}
+
+const setContactObject = () => {
+    let contactObject = new Contact()
+    let names = getInputValueById('#name').split(" ");
+    contactObject._firstName = names[0];
+    contactObject._lastName = names[1];
+    contactObject._address = getInputValueById('#address');
+    contactObject._city = getInputValueById('#city');
+    contactObject._state = getInputValueById('#state');
+    contactObject._zip = getInputValueById('#zip');
+    contactObject._phone = getInputValueById('#phone');
+    contactObject._email = getInputValueById('#email');
+    alert(contactObject.toString())
+  }
+
+  const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+  }

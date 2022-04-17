@@ -60,7 +60,7 @@ body {
 
 .form{
    width: 55%;
-   height: 80vh;
+   height: 85vh;
    background: #ffffff 0% 0% no-repeat padding-box;
    box-shadow: 0px 3px 6px #00000029;
    border: 1px solid #f5f5f5;
@@ -175,18 +175,39 @@ label{
 /* UC5 */
 .submit-reset{
     display: flex;
-    justify-content:center;
-margin-top: -24px;
-   
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 40px;
 }
-.btn-Add{
-    width: 90px;
-    height:40px;
+.button{
+    font-size: 20px;
+    font-family: Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 120px;
+    padding: 7px 7px;
+    border: 1px solid #707070;
+    cursor: pointer;
 }
-.btn-Reset{
-    width: 90px;
-    height:40px;
-    margin-left:20px;
+.addButton{
+    background-color: #f5f5f5;
+    margin-right: 30px;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.resetButton{
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    opacity: 1;
 }
 .name-error{
     margin-left: 10px;
